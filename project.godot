@@ -16,7 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Dungeon Dojo"
+run/main_scene="res://resources/level.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=960
+window/size/height=640
+window/size/resizable=false
 
 [rendering]
 
