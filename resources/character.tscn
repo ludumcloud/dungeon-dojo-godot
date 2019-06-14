@@ -1,17 +1,26 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/slime.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 81.0796, 68.6983 )
 
 [node name="Character" type="KinematicBody2D"]
 
 [node name="Pivot" type="Position2D" parent="."]
 
-[node name="Body" type="Sprite" parent="Pivot"]
+[node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
-texture = ExtResource( 1 )
+frames = SubResource( 1 )
+animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
