@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0025.tres" type="Texture" id=1]
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0022.tres" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0017.tres" type="Texture" id=11]
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0019.tres" type="Texture" id=12]
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0021.tres" type="Texture" id=13]
+[ext_resource path="res://resources/Body.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -42,9 +43,10 @@ extents = Vector2( 81.0796, 68.6983 )
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-animation = "attack"
-frame = 7
+animation = "idle"
+frame = 5
 playing = true
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
