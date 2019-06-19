@@ -21,15 +21,15 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "attack",
-"speed": 15.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "dummy",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "attack",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -42,7 +42,7 @@ extents = Vector2( 39, 68.6983 )
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-animation = "attack"
+animation = "idle"
 frame = 7
 playing = true
 
