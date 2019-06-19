@@ -1,12 +1,34 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://resources/slime.png" type="Texture" id=1]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0000.png" type="Texture" id=1]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0023.png" type="Texture" id=2]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0002.png" type="Texture" id=3]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0003.png" type="Texture" id=4]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0007.png" type="Texture" id=5]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0009.png" type="Texture" id=6]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0011.png" type="Texture" id=7]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0013.png" type="Texture" id=8]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0015.png" type="Texture" id=9]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0017.png" type="Texture" id=10]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0019.png" type="Texture" id=11]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0021.png" type="Texture" id=12]
+[ext_resource path="res://resources/slimeAttack1/slimeAttack1_0025.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "attack",
+"speed": 15.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "dummy",
 "speed": 5.0
 } ]
 
@@ -20,7 +42,8 @@ extents = Vector2( 81.0796, 68.6983 )
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "dummy"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

@@ -25,6 +25,10 @@ window/size/width=960
 window/size/height=640
 window/size/resizable=false
 
+[editor_plugins]
+
+enabled=PoolStringArray( "codeandweb.texturepacker" )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
