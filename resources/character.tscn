@@ -1,13 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://resources/slime.png" type="Texture" id=1]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0025.tres" type="Texture" id=1]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0022.tres" type="Texture" id=2]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0023.tres" type="Texture" id=3]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0000.tres" type="Texture" id=4]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0003.tres" type="Texture" id=5]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0007.tres" type="Texture" id=6]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0009.tres" type="Texture" id=7]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0012.tres" type="Texture" id=8]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0013.tres" type="Texture" id=9]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0015.tres" type="Texture" id=10]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0017.tres" type="Texture" id=11]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0019.tres" type="Texture" id=12]
+[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0021.tres" type="Texture" id=13]
+[ext_resource path="res://resources/Body.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
+"speed": 12.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "dummy",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "attack",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -21,6 +44,9 @@ extents = Vector2( 81.0796, 68.6983 )
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 5
+playing = true
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
