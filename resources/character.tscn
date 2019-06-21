@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0000.tres" type="Texture" id=1]
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0003.tres" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0022.tres" type="Texture" id=10]
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0024.tres" type="Texture" id=11]
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0026.tres" type="Texture" id=12]
+[ext_resource path="res://scripts/PlayerBody.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,53 +22,56 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 39, 68.6983 )
+
 [sub_resource type="Animation" id=4]
-resource_name = "Idle"
-length = 0.3
+resource_name = "HighAttack"
+length = 0.6
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("Pivot/Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 10 ]
+"times": PoolRealArray( 0.00162264, 0.0932594, 0.143213, 0.484971 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 1, 11 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Slap"
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 0.5
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("Pivot/Body:frame")
 tracks/0/interp = 1
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0, 1, 1, 7 ]
+"times": PoolRealArray( 0, 0.250427 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 11 ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 39, 68.6983 )
-
 [node name="Character" type="KinematicBody2D"]
+script = ExtResource( 13 )
 
 [node name="Pivot" type="Position2D" parent="."]
 
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-frame = 10
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot/Body"]
-anims/Idle = SubResource( 4 )
-anims/Slap = SubResource( 2 )
+frame = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -61, -2 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/HighAttack = SubResource( 4 )
+anims/Idle = SubResource( 3 )

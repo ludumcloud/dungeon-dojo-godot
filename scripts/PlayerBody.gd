@@ -3,9 +3,11 @@ extends KinematicBody2D
 var speed = 400
 var velocity = Vector2()
 
+onready var animation_player = get_node("AnimationPlayer")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	animation_player.play("Idle")
 	
 func get_input():
 	if Input.is_action_pressed("move_left"):
@@ -14,7 +16,7 @@ func get_input():
 		velocity.x = speed
 		
 	if Input.is_action_just_pressed("hi_attack"):
-		pass
+		animation_player.play('HighAttack')
 
 	if velocity.x > 0:
 		velocity.x -= 50
