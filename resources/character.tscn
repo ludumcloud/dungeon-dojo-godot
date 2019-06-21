@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0000.tres" type="Texture" id=1]
 [ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0003.tres" type="Texture" id=2]
@@ -20,6 +20,22 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 10 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Slap"
@@ -46,9 +62,10 @@ extents = Vector2( 39, 68.6983 )
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-frame = 7
+frame = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pivot/Body"]
+anims/Idle = SubResource( 4 )
 anims/Slap = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
