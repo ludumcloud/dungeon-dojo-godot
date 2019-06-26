@@ -11,6 +11,12 @@ var velocity = Vector2()
 
 const IDLE = 'Idle'
 const HIGH_ATTACK = 'HighAttack'
+const MID_ATTACK = 'MidAttack'
+const LOW_ATTACK = 'LowAttack'
+const MOVE_FORWARD = 'MoveForward'
+const MOVE_BACK = 'MoveBack'
+const JUMP = 'Jump'
+const DAMAGE = 'Damage'
 
 onready var animation_player = get_node(\"AnimationPlayer\")
 
@@ -29,11 +35,20 @@ func _ready():
 func get_input():
 	if Input.is_action_pressed(\"move_left\"):
 		velocity.x = -speed
+		animation_player.play(MOVE_BACK)
 	if Input.is_action_pressed(\"move_right\"):
 		velocity.x = speed
-		
+		animation_player.play(MOVE_FORWARD)
 	if Input.is_action_just_pressed(\"hi_attack\"):
 		animation_player.play(HIGH_ATTACK)
+	if Input.is_action_just_pressed(\"mid_attack\"):
+		animation_player.play(MID_ATTACK)
+	if Input.is_action_just_pressed(\"low_attack\"):
+		animation_player.play(LOW_ATTACK)
+	if Input.is_action_just_pressed(\"damage\"):
+		animation_player.play(DAMAGE)
+	if Input.is_action_just_pressed(\"jump\"):
+		animation_player.play(JUMP)
 
 	if velocity.x > 0:
 		velocity.x -= 50
