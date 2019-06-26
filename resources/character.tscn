@@ -59,7 +59,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 39, 68.6983 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "Damage"
 length = 0.45
 tracks/0/type = "value"
@@ -75,9 +75,8 @@ tracks/0/keys = {
 "values": [ 19, 24 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "HighAttack"
-length = 0.6
+[sub_resource type="Animation" id=4]
+length = 0.61
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Body:frame")
 tracks/0/interp = 1
@@ -85,13 +84,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.00162264, 0.0978472, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.00162264, 0.0748037, 0.199071, 0.289325, 0.576812 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0, 0, 9 ]
+"values": [ 0, 0, 1, 2, 9 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Body:frame")
@@ -106,7 +105,7 @@ tracks/0/keys = {
 "values": [ 25, 31 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "Jump"
 length = 0.52
 tracks/0/type = "value"
@@ -122,7 +121,7 @@ tracks/0/keys = {
 "values": [ 32, 35, 36, 37 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 resource_name = "Land"
 length = 0.4
 tracks/0/type = "value"
@@ -138,8 +137,7 @@ tracks/0/keys = {
 "values": [ 37, 32, 33, 32, 31 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "LowAttack"
+[sub_resource type="Animation" id=8]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Body:frame")
@@ -154,8 +152,7 @@ tracks/0/keys = {
 "values": [ 17, 18, 18, 17 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "MidAttack"
+[sub_resource type="Animation" id=9]
 length = 0.51
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Body:frame")
@@ -244,20 +241,20 @@ script = ExtResource( 1 )
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-frame = 24
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -61, -2 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Damage = SubResource( 7 )
-anims/HighAttack = SubResource( 3 )
-anims/Idle = SubResource( 4 )
-anims/Jump = SubResource( 8 )
-anims/Land = SubResource( 9 )
-anims/LowAttack = SubResource( 6 )
-anims/MidAttack = SubResource( 5 )
+anims/Damage = SubResource( 3 )
+anims/HighAttack = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Jump = SubResource( 6 )
+anims/Land = SubResource( 7 )
+anims/LowAttack = SubResource( 8 )
+anims/MidAttack = SubResource( 9 )
 anims/MoveBack = SubResource( 10 )
 anims/MoveBackTransition = SubResource( 11 )
 anims/MoveForward = SubResource( 12 )
