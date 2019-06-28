@@ -1,40 +1,52 @@
 extends KinematicBody2D
 
-var speed = 400
-var velocity = Vector2()
+const UP = Vector2(0, -1)
+const GRAVITY = 20
+const SPEED = 150
+const JUMP_HEIGHT = -500
+var motion = Vector2()
+onready var animation_tree = get_node("AnimationTree")
+var playback: AnimationNodeStateMachinePlayback
+var active: bool
 
-const IDLE = 'Idle'
-const HIGH_ATTACK = 'HighAttack'
 
-onready var animation_player = get_node("AnimationPlayer")
-
-# Signal Handlers
-func _on_animation_finished(animation):
-	if (animation == IDLE):
-		return
-	else:
-		animation_player.play(IDLE)
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	animation_player.play(IDLE)
-	animation_player.connect("animation_finished", self, "_on_animation_finished")
-	
-func get_input():
-	if Input.is_action_pressed("move_left"):
-		velocity.x = -speed
-	if Input.is_action_pressed("move_right"):
-		velocity.x = speed
-		
-	if Input.is_action_just_pressed("hi_attack"):
-		animation_player.play(HIGH_ATTACK)
+	playback = animation_tree.get("parameters/playback")
+	playback.start("Idle")
+	active = true
 
-	if velocity.x > 0:
-		velocity.x -= 50
-	if velocity.x < 0:
-		velocity.x += 50
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_input()
-	move_and_collide(velocity * delta)
+	if Input.is_action_just_pressed("hi_attack"):
+		playback.travel("HighAttack")
+	if Input.is_action_just_pressed("mid_attack"):
+		playback.travel("MidAttack")
+	if Input.is_action_just_pressed("low_attack"):
+		playback.travel("LowAttack")
+	if Input.is_action_just_released("jump"):
+		playback.travel("Jump")
+	if Input.is_action_just_pressed("damage"):
+		playback.travel("Damage")
+	if Input.is_action_pressed("move_left"):
+		playback.travel("MoveBack")
+	if Input.is_action_pressed("move_right"):
+		playback.travel("MoveForward")
+	if Input.is_action_just_released("move_right"):
+		playback.travel("Idle")
+	if Input.is_action_just_released("move_left"):
+		playback.travel("Idle")
+
+func _physics_process(delta):
+	motion.y += GRAVITY
+
+	if Input.is_action_pressed("move_right"):
+		motion.x = SPEED
+	elif Input.is_action_pressed("move_left"):
+		motion.x = -SPEED
+	else:
+		motion.x = 0
+
+	if is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			motion.y = JUMP_HEIGHT
+
+	motion = move_and_slide(motion, UP)
