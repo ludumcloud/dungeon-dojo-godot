@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://scripts/movement.gd" type="Script" id=1]
 [ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0001.tres" type="Texture" id=2]
@@ -47,7 +47,6 @@
 [ext_resource path="res://resources/slime_animationSheet.sprites/Move Forward/moveForward_0002.tres" type="Texture" id=45]
 [ext_resource path="res://resources/slime_animationSheet.sprites/Move Forward/moveForward_0003.tres" type="Texture" id=46]
 [ext_resource path="res://resources/slime_animationSheet.sprites/Move Forward/moveForward_0004.tres" type="Texture" id=47]
-[ext_resource path="res://scripts/animationController.gd" type="Script" id=48]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -70,7 +69,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -9.31323e-010, 0.409902 ),
+"times": PoolRealArray( -9.31323e-10, 0.409902 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 19, 24 ]
@@ -190,7 +189,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -4.65661e-010, 0.168771 ),
+"times": PoolRealArray( -4.65661e-10, 0.168771 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 39, 41 ]
@@ -239,7 +238,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 5.82077e-010 ),
+"times": PoolRealArray( 5.82077e-10 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 42 ]
@@ -349,7 +348,7 @@ states/MoveForward/position = Vector2( 680, 499 )
 states/MoveForwardTransition/node = SubResource( 24 )
 states/MoveForwardTransition/position = Vector2( 580, 414 )
 transitions = [ "Idle", "MoveForwardTransition", SubResource( 25 ), "MoveForward", "MoveForwardTransition", SubResource( 26 ), "Idle", "MoveBackTransition", SubResource( 27 ), "MoveBackTransition", "MoveBack", SubResource( 28 ), "MoveBack", "MoveBackTransition", SubResource( 29 ), "Idle", "Damage", SubResource( 30 ), "Idle", "HighAttack", SubResource( 31 ), "Idle", "MidAttack", SubResource( 32 ), "Idle", "LowAttack", SubResource( 33 ), "Idle", "Jump", SubResource( 34 ), "MoveForwardTransition", "MoveForward", SubResource( 35 ), "MoveForwardTransition", "Idle", SubResource( 36 ), "LowAttack", "Idle", SubResource( 37 ), "MidAttack", "Idle", SubResource( 38 ), "HighAttack", "Idle", SubResource( 39 ), "MoveBackTransition", "Idle", SubResource( 40 ), "Damage", "Idle", SubResource( 41 ), "Jump", "Idle", SubResource( 42 ) ]
-graph_offset = Vector2( 102, 264.704 )
+graph_offset = Vector2( 102, 193.65 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=44]
 
@@ -385,4 +384,3 @@ tree_root = SubResource( 43 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 44 )
-script = ExtResource( 48 )
