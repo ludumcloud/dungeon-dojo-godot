@@ -1,0 +1,708 @@
+{
+	"textures": [
+		{
+			"image": "slime_animationSheet.png",
+			"size": {
+				"w": 254,
+				"h": 1728
+			},
+			"sprites": [
+				{
+					"filename": "Attack_1/attack1_0003.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 231,
+						"h": 166
+					},
+					"margin": {
+						"x": 18,
+						"y": 10,
+						"w": 25,
+						"h": 30
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0004.png",
+					"region": {
+						"x": 1,
+						"y": 169,
+						"w": 226,
+						"h": 175
+					},
+					"margin": {
+						"x": 24,
+						"y": 1,
+						"w": 30,
+						"h": 21
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0002.png",
+					"region": {
+						"x": 1,
+						"y": 346,
+						"w": 202,
+						"h": 162
+					},
+					"margin": {
+						"x": 13,
+						"y": 13,
+						"w": 54,
+						"h": 34
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0005.png",
+					"region": {
+						"x": 1,
+						"y": 510,
+						"w": 187,
+						"h": 79
+					},
+					"margin": {
+						"x": 22,
+						"y": 95,
+						"w": 69,
+						"h": 117
+					}
+				},
+				{
+					"filename": "Jump/jump_0004.png",
+					"region": {
+						"x": 190,
+						"y": 510,
+						"w": 62,
+						"h": 87
+					},
+					"margin": {
+						"x": 36,
+						"y": 109,
+						"w": 194,
+						"h": 109
+					}
+				},
+				{
+					"filename": "Attack_2/attack2_0003.png",
+					"region": {
+						"x": 1,
+						"y": 591,
+						"w": 135,
+						"h": 109
+					},
+					"margin": {
+						"x": 30,
+						"y": 66,
+						"w": 121,
+						"h": 87
+					}
+				},
+				{
+					"filename": "Attack_2/attack2_0006.png",
+					"region": {
+						"x": 138,
+						"y": 599,
+						"w": 109,
+						"h": 88
+					},
+					"margin": {
+						"x": 29,
+						"y": 87,
+						"w": 147,
+						"h": 108
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0001.png",
+					"region": {
+						"x": 138,
+						"y": 689,
+						"w": 106,
+						"h": 61
+					},
+					"margin": {
+						"x": 2,
+						"y": 114,
+						"w": 150,
+						"h": 135
+					}
+				},
+				{
+					"filename": "Attack_2/attack2_0004.png",
+					"region": {
+						"x": 1,
+						"y": 702,
+						"w": 128,
+						"h": 109
+					},
+					"margin": {
+						"x": 30,
+						"y": 66,
+						"w": 128,
+						"h": 87
+					}
+				},
+				{
+					"filename": "Attack_3/attack3_0002.png",
+					"region": {
+						"x": 131,
+						"y": 752,
+						"w": 116,
+						"h": 71
+					},
+					"margin": {
+						"x": 29,
+						"y": 104,
+						"w": 140,
+						"h": 125
+					}
+				},
+				{
+					"filename": "Attack_2/attack2_0005.png",
+					"region": {
+						"x": 1,
+						"y": 813,
+						"w": 125,
+						"h": 108
+					},
+					"margin": {
+						"x": 29,
+						"y": 67,
+						"w": 131,
+						"h": 88
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0006.png",
+					"region": {
+						"x": 128,
+						"y": 825,
+						"w": 100,
+						"h": 86
+					},
+					"margin": {
+						"x": 19,
+						"y": 90,
+						"w": 156,
+						"h": 110
+					}
+				},
+				{
+					"filename": "Jump/jump_0002.png",
+					"region": {
+						"x": 128,
+						"y": 913,
+						"w": 98,
+						"h": 52
+					},
+					"margin": {
+						"x": 17,
+						"y": 122,
+						"w": 158,
+						"h": 144
+					}
+				},
+				{
+					"filename": "Damage/damage_0005.png",
+					"region": {
+						"x": 1,
+						"y": 923,
+						"w": 91,
+						"h": 91
+					},
+					"margin": {
+						"x": 13,
+						"y": 83,
+						"w": 165,
+						"h": 105
+					}
+				},
+				{
+					"filename": "Damage/damage_0006.png",
+					"region": {
+						"x": 94,
+						"y": 967,
+						"w": 91,
+						"h": 91
+					},
+					"margin": {
+						"x": 12,
+						"y": 83,
+						"w": 165,
+						"h": 105
+					}
+				},
+				{
+					"filename": "Damage/damage_0004.png",
+					"region": {
+						"x": 1,
+						"y": 1016,
+						"w": 89,
+						"h": 92
+					},
+					"margin": {
+						"x": 15,
+						"y": 83,
+						"w": 167,
+						"h": 104
+					}
+				},
+				{
+					"filename": "Jump/jump_0003.png",
+					"region": {
+						"x": 187,
+						"y": 967,
+						"w": 56,
+						"h": 92
+					},
+					"margin": {
+						"x": 36,
+						"y": 97,
+						"w": 200,
+						"h": 104
+					}
+				},
+				{
+					"filename": "Damage/damage_0003.png",
+					"region": {
+						"x": 92,
+						"y": 1060,
+						"w": 87,
+						"h": 89
+					},
+					"margin": {
+						"x": 16,
+						"y": 85,
+						"w": 169,
+						"h": 107
+					}
+				},
+				{
+					"filename": "Idle/idle_0003.png",
+					"region": {
+						"x": 181,
+						"y": 1061,
+						"w": 72,
+						"h": 59
+					},
+					"margin": {
+						"x": 30,
+						"y": 116,
+						"w": 184,
+						"h": 137
+					}
+				},
+				{
+					"filename": "Jump/jump_0006.png",
+					"region": {
+						"x": 181,
+						"y": 1122,
+						"w": 70,
+						"h": 68
+					},
+					"margin": {
+						"x": 31,
+						"y": 109,
+						"w": 186,
+						"h": 128
+					}
+				},
+				{
+					"filename": "Move Back/back_0002.png",
+					"region": {
+						"x": 1,
+						"y": 1110,
+						"w": 87,
+						"h": 59
+					},
+					"margin": {
+						"x": 16,
+						"y": 113,
+						"w": 169,
+						"h": 137
+					}
+				},
+				{
+					"filename": "Move Forward/moveForward_0002.png",
+					"region": {
+						"x": 90,
+						"y": 1151,
+						"w": 87,
+						"h": 59
+					},
+					"margin": {
+						"x": 28,
+						"y": 113,
+						"w": 169,
+						"h": 137
+					}
+				},
+				{
+					"filename": "Damage/damage_0001.png",
+					"region": {
+						"x": 179,
+						"y": 1192,
+						"w": 74,
+						"h": 64
+					},
+					"margin": {
+						"x": 29,
+						"y": 110,
+						"w": 182,
+						"h": 132
+					}
+				},
+				{
+					"filename": "Move Back/back_0003.png",
+					"region": {
+						"x": 1,
+						"y": 1171,
+						"w": 84,
+						"h": 57
+					},
+					"margin": {
+						"x": 19,
+						"y": 114,
+						"w": 172,
+						"h": 139
+					}
+				},
+				{
+					"filename": "Move Forward/moveForward_0003.png",
+					"region": {
+						"x": 87,
+						"y": 1212,
+						"w": 84,
+						"h": 57
+					},
+					"margin": {
+						"x": 29,
+						"y": 114,
+						"w": 172,
+						"h": 139
+					}
+				},
+				{
+					"filename": "Jump/jump_0001.png",
+					"region": {
+						"x": 1,
+						"y": 1230,
+						"w": 84,
+						"h": 54
+					},
+					"margin": {
+						"x": 24,
+						"y": 121,
+						"w": 172,
+						"h": 142
+					}
+				},
+				{
+					"filename": "Move Back/back_0001.png",
+					"region": {
+						"x": 173,
+						"y": 1258,
+						"w": 79,
+						"h": 58
+					},
+					"margin": {
+						"x": 24,
+						"y": 115,
+						"w": 177,
+						"h": 138
+					}
+				},
+				{
+					"filename": "Move Back/back_0004.png",
+					"region": {
+						"x": 87,
+						"y": 1271,
+						"w": 83,
+						"h": 59
+					},
+					"margin": {
+						"x": 20,
+						"y": 113,
+						"w": 173,
+						"h": 137
+					}
+				},
+				{
+					"filename": "Attack_3/attack3_0001.png",
+					"region": {
+						"x": 172,
+						"y": 1318,
+						"w": 81,
+						"h": 62
+					},
+					"margin": {
+						"x": 29,
+						"y": 113,
+						"w": 175,
+						"h": 134
+					}
+				},
+				{
+					"filename": "Move Forward/moveForward_0004.png",
+					"region": {
+						"x": 1,
+						"y": 1286,
+						"w": 83,
+						"h": 58
+					},
+					"margin": {
+						"x": 29,
+						"y": 114,
+						"w": 173,
+						"h": 138
+					}
+				},
+				{
+					"filename": "Damage/damage_0002.png",
+					"region": {
+						"x": 86,
+						"y": 1332,
+						"w": 82,
+						"h": 86
+					},
+					"margin": {
+						"x": 20,
+						"y": 88,
+						"w": 174,
+						"h": 110
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0008.png",
+					"region": {
+						"x": 170,
+						"y": 1382,
+						"w": 82,
+						"h": 70
+					},
+					"margin": {
+						"x": 26,
+						"y": 105,
+						"w": 174,
+						"h": 126
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0009.png",
+					"region": {
+						"x": 1,
+						"y": 1346,
+						"w": 82,
+						"h": 64
+					},
+					"margin": {
+						"x": 24,
+						"y": 112,
+						"w": 174,
+						"h": 132
+					}
+				},
+				{
+					"filename": "Move Forward/moveForward_0001.png",
+					"region": {
+						"x": 1,
+						"y": 1412,
+						"w": 79,
+						"h": 58
+					},
+					"margin": {
+						"x": 28,
+						"y": 115,
+						"w": 177,
+						"h": 138
+					}
+				},
+				{
+					"filename": "Attack_2/attack2_0001.png",
+					"region": {
+						"x": 82,
+						"y": 1420,
+						"w": 78,
+						"h": 57
+					},
+					"margin": {
+						"x": 24,
+						"y": 116,
+						"w": 178,
+						"h": 139
+					}
+				},
+				{
+					"filename": "Attack_2/attack2_0002.png",
+					"region": {
+						"x": 1,
+						"y": 1472,
+						"w": 77,
+						"h": 63
+					},
+					"margin": {
+						"x": 28,
+						"y": 110,
+						"w": 179,
+						"h": 133
+					}
+				},
+				{
+					"filename": "Idle/idle_0006.png",
+					"region": {
+						"x": 162,
+						"y": 1454,
+						"w": 76,
+						"h": 57
+					},
+					"margin": {
+						"x": 28,
+						"y": 118,
+						"w": 180,
+						"h": 139
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0007.png",
+					"region": {
+						"x": 80,
+						"y": 1479,
+						"w": 75,
+						"h": 86
+					},
+					"margin": {
+						"x": 26,
+						"y": 90,
+						"w": 181,
+						"h": 110
+					}
+				},
+				{
+					"filename": "Attack_1/attack1_0010.png",
+					"region": {
+						"x": 1,
+						"y": 1537,
+						"w": 75,
+						"h": 69
+					},
+					"margin": {
+						"x": 29,
+						"y": 106,
+						"w": 181,
+						"h": 127
+					}
+				},
+				{
+					"filename": "Attack_2/attack2_0007.png",
+					"region": {
+						"x": 157,
+						"y": 1513,
+						"w": 75,
+						"h": 62
+					},
+					"margin": {
+						"x": 25,
+						"y": 113,
+						"w": 181,
+						"h": 134
+					}
+				},
+				{
+					"filename": "Idle/idle_0000.png",
+					"region": {
+						"x": 78,
+						"y": 1567,
+						"w": 75,
+						"h": 61
+					},
+					"margin": {
+						"x": 29,
+						"y": 114,
+						"w": 181,
+						"h": 135
+					}
+				},
+				{
+					"filename": "Idle/idle_0004.png",
+					"region": {
+						"x": 1,
+						"y": 1608,
+						"w": 74,
+						"h": 60
+					},
+					"margin": {
+						"x": 29,
+						"y": 116,
+						"w": 182,
+						"h": 136
+					}
+				},
+				{
+					"filename": "Idle/idle_0005.png",
+					"region": {
+						"x": 1,
+						"y": 1670,
+						"w": 74,
+						"h": 57
+					},
+					"margin": {
+						"x": 29,
+						"y": 117,
+						"w": 182,
+						"h": 139
+					}
+				},
+				{
+					"filename": "Jump/jump_0005.png",
+					"region": {
+						"x": 77,
+						"y": 1630,
+						"w": 69,
+						"h": 75
+					},
+					"margin": {
+						"x": 32,
+						"y": 108,
+						"w": 187,
+						"h": 121
+					}
+				},
+				{
+					"filename": "Idle/idle_0002.png",
+					"region": {
+						"x": 155,
+						"y": 1577,
+						"w": 74,
+						"h": 59
+					},
+					"margin": {
+						"x": 29,
+						"y": 115,
+						"w": 182,
+						"h": 137
+					}
+				},
+				{
+					"filename": "Idle/idle_0001.png",
+					"region": {
+						"x": 148,
+						"y": 1638,
+						"w": 73,
+						"h": 60
+					},
+					"margin": {
+						"x": 30,
+						"y": 115,
+						"w": 183,
+						"h": 136
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:8a74d8a5da230d2c518ae730bc939d7c:279600b500efb5402d9e7c30744d3758:05e28c62fc44525078406b5be1d4adfc$"
+	}
+}
