@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/dummySheet.tpsheet-84d678acbc90942944d554ab4029f7ba.res"
+
+[deps]
+
+files=[ "res://resources/dummySheet.sprites/targetdummy.tres" ]
+
+source_file="res://resources/dummySheet.tpsheet"
+dest_files=[ "res://.import/dummySheet.tpsheet-84d678acbc90942944d554ab4029f7ba.res", "res://resources/dummySheet.sprites/targetdummy.tres" ]
+
+[params]
+
