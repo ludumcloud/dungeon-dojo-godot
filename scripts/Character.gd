@@ -7,13 +7,11 @@ const JUMP_HEIGHT = -500
 var motion = Vector2()
 onready var animation_tree = get_node("AnimationTree")
 var playback: AnimationNodeStateMachinePlayback
-var active: bool
 
 
 func _ready():
 	playback = animation_tree.get("parameters/playback")
 	playback.start("Idle")
-	active = true
 
 func _process(delta):
 	if Input.is_action_just_pressed("hi_attack"):
