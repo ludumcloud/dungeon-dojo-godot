@@ -1,51 +1,386 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=92 format=2]
 
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0025.tres" type="Texture" id=1]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0022.tres" type="Texture" id=2]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0023.tres" type="Texture" id=3]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0000.tres" type="Texture" id=4]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0003.tres" type="Texture" id=5]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0007.tres" type="Texture" id=6]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0009.tres" type="Texture" id=7]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0012.tres" type="Texture" id=8]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0013.tres" type="Texture" id=9]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0015.tres" type="Texture" id=10]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0017.tres" type="Texture" id=11]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0019.tres" type="Texture" id=12]
-[ext_resource path="res://resources/slimeattack1sheetfile.sprites/slimeAttack1_0021.tres" type="Texture" id=13]
+[ext_resource path="res://scripts/Character.gd" type="Script" id=1]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0001.tres" type="Texture" id=2]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0002.tres" type="Texture" id=3]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0003.tres" type="Texture" id=4]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0004.tres" type="Texture" id=5]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0005.tres" type="Texture" id=6]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0006.tres" type="Texture" id=7]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0007.tres" type="Texture" id=8]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0008.tres" type="Texture" id=9]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0009.tres" type="Texture" id=10]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0010.tres" type="Texture" id=11]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_2/attack2_0001.tres" type="Texture" id=12]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_2/attack2_0002.tres" type="Texture" id=13]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_2/attack2_0003.tres" type="Texture" id=14]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_2/attack2_0004.tres" type="Texture" id=15]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_2/attack2_0005.tres" type="Texture" id=16]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_2/attack2_0006.tres" type="Texture" id=17]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_2/attack2_0007.tres" type="Texture" id=18]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_3/attack3_0001.tres" type="Texture" id=19]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Attack_3/attack3_0002.tres" type="Texture" id=20]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Damage/damage_0001.tres" type="Texture" id=21]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Damage/damage_0002.tres" type="Texture" id=22]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Damage/damage_0003.tres" type="Texture" id=23]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Damage/damage_0004.tres" type="Texture" id=24]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Damage/damage_0005.tres" type="Texture" id=25]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Damage/damage_0006.tres" type="Texture" id=26]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Idle/idle_0000.tres" type="Texture" id=27]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Idle/idle_0001.tres" type="Texture" id=28]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Idle/idle_0002.tres" type="Texture" id=29]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Idle/idle_0003.tres" type="Texture" id=30]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Idle/idle_0004.tres" type="Texture" id=31]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Idle/idle_0005.tres" type="Texture" id=32]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Idle/idle_0006.tres" type="Texture" id=33]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Jump/jump_0001.tres" type="Texture" id=34]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Jump/jump_0002.tres" type="Texture" id=35]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Jump/jump_0003.tres" type="Texture" id=36]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Jump/jump_0004.tres" type="Texture" id=37]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Jump/jump_0005.tres" type="Texture" id=38]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Jump/jump_0006.tres" type="Texture" id=39]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Back/back_0001.tres" type="Texture" id=40]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Back/back_0002.tres" type="Texture" id=41]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Back/back_0003.tres" type="Texture" id=42]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Back/back_0004.tres" type="Texture" id=43]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Forward/moveForward_0001.tres" type="Texture" id=44]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Forward/moveForward_0002.tres" type="Texture" id=45]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Forward/moveForward_0003.tres" type="Texture" id=46]
+[ext_resource path="res://resources/slime_animationSheet.sprites/Move Forward/moveForward_0004.tres" type="Texture" id=47]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
 "loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "dummy",
+"name": "default",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 1 ) ],
-"loop": false,
-"name": "attack",
-"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 39, 68.6983 )
+extents = Vector2( 39, 44.1802 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Damage"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -9.31323e-10, 0.409902 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 19, 24 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.61
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00162264, 0.0748037, 0.199071, 0.289325, 0.576812 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 0, 1, 2, 9 ]
+}
+
+[sub_resource type="Animation" id=5]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.500151 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 25, 31 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.000784703, 0.124367, 0.269357 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 34, 36, 37 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Land"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0709642, 0.160076, 0.247373, 0.32741 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 37, 32, 33, 32, 31 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.000222273, 0.0651975, 0.207602, 0.277363 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 17, 18, 18, 17 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.51
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0674543, 0.20757, 0.30106, 0.463753 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 10, 10, 13, 13, 16 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "MoveBack"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -4.65661e-10, 0.168771 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 39, 41 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "MoveBackTransition"
+length = 0.04
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 38 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "MoveForward"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00120983, 0.17119 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 43, 45 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "MoveForwardTransition"
+length = 0.04
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 5.82077e-10 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 42 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Damage"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "HighAttack"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Idle"
+
+[sub_resource type="GDScript" id=17]
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "Jump"
+script = SubResource( 17 )
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "LowAttack"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "MidAttack"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "MoveBack"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "MoveBackTransition"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "MoveForward"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "MoveForwardTransition"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=43]
+states/Damage/node = SubResource( 14 )
+states/Damage/position = Vector2( 209, 103 )
+states/HighAttack/node = SubResource( 15 )
+states/HighAttack/position = Vector2( 580, 114 )
+states/Idle/node = SubResource( 16 )
+states/Idle/position = Vector2( 348, 236 )
+states/Jump/node = SubResource( 18 )
+states/Jump/position = Vector2( 179, 319 )
+states/LowAttack/node = SubResource( 19 )
+states/LowAttack/position = Vector2( 622, 306 )
+states/MidAttack/node = SubResource( 20 )
+states/MidAttack/position = Vector2( 639, 207 )
+states/MoveBack/node = SubResource( 21 )
+states/MoveBack/position = Vector2( 325, 499 )
+states/MoveBackTransition/node = SubResource( 22 )
+states/MoveBackTransition/position = Vector2( 332, 414 )
+states/MoveForward/node = SubResource( 23 )
+states/MoveForward/position = Vector2( 680, 499 )
+states/MoveForwardTransition/node = SubResource( 24 )
+states/MoveForwardTransition/position = Vector2( 580, 414 )
+transitions = [ "Idle", "MoveForwardTransition", SubResource( 25 ), "MoveForward", "MoveForwardTransition", SubResource( 26 ), "Idle", "MoveBackTransition", SubResource( 27 ), "MoveBackTransition", "MoveBack", SubResource( 28 ), "MoveBack", "MoveBackTransition", SubResource( 29 ), "Idle", "Damage", SubResource( 30 ), "Idle", "HighAttack", SubResource( 31 ), "Idle", "MidAttack", SubResource( 32 ), "Idle", "LowAttack", SubResource( 33 ), "Idle", "Jump", SubResource( 34 ), "MoveForwardTransition", "MoveForward", SubResource( 35 ), "MoveForwardTransition", "Idle", SubResource( 36 ), "LowAttack", "Idle", SubResource( 37 ), "MidAttack", "Idle", SubResource( 38 ), "HighAttack", "Idle", SubResource( 39 ), "MoveBackTransition", "Idle", SubResource( 40 ), "Damage", "Idle", SubResource( 41 ), "Jump", "Idle", SubResource( 42 ) ]
+graph_offset = Vector2( 102, 193.65 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=44]
 
 [node name="Character" type="KinematicBody2D"]
+script = ExtResource( 1 )
 
 [node name="Pivot" type="Position2D" parent="."]
 
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-animation = "idle"
-frame = 7
-playing = true
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -61, -2 )
+position = Vector2( -63.095, -22.9502 )
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Damage = SubResource( 3 )
+anims/HighAttack = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Jump = SubResource( 6 )
+anims/Land = SubResource( 7 )
+anims/LowAttack = SubResource( 8 )
+anims/MidAttack = SubResource( 9 )
+anims/MoveBack = SubResource( 10 )
+anims/MoveBackTransition = SubResource( 11 )
+anims/MoveForward = SubResource( 12 )
+anims/MoveForwardTransition = SubResource( 13 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 43 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 44 )

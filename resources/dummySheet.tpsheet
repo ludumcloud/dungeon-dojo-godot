@@ -1,0 +1,37 @@
+{
+	"textures": [
+		{
+			"image": "dummySheet.png",
+			"size": {
+				"w": 474,
+				"h": 1278
+			},
+			"sprites": [
+				{
+					"filename": "targetdummy.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 472,
+						"h": 1276
+					},
+					"margin": {
+						"x": 1007,
+						"y": 518,
+						"w": 1308,
+						"h": 583
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:77bdec22568af9ffc257ce613c2ec86c:470f38efbfecfff3964088ba9fbabd31:a156559b6a1992fc25f403d30d0ea9eb$"
+	}
+}
