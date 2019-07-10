@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://resources/slime_animationSheet.sprites/Attack_1/attack1_0001.tres" type="Texture" id=2]
@@ -69,7 +69,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -9.31323e-10, 0.409902 ),
+"times": PoolRealArray( -9.31323e-010, 0.409902 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 19, 24 ]
@@ -107,7 +107,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "Jump"
-length = 0.3
+length = 0.24
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pivot/Body:frame")
 tracks/0/interp = 1
@@ -115,10 +115,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.000784703, 0.124367, 0.269357 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.000784703, 0.0885067, 0.111909, 0.225803 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 34, 36, 37 ]
+"values": [ 34, 34, 36, 37 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -189,7 +189,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -4.65661e-10, 0.168771 ),
+"times": PoolRealArray( -4.65661e-010, 0.168771 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 39, 41 ]
@@ -238,7 +238,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 5.82077e-10 ),
+"times": PoolRealArray( 5.82077e-010 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 42 ]
@@ -260,33 +260,34 @@ animation = "Jump"
 script = SubResource( 17 )
 
 [sub_resource type="AnimationNodeAnimation" id=19]
-animation = "LowAttack"
+animation = "Land"
 
 [sub_resource type="AnimationNodeAnimation" id=20]
-animation = "MidAttack"
+animation = "LowAttack"
 
 [sub_resource type="AnimationNodeAnimation" id=21]
-animation = "MoveBack"
+animation = "MidAttack"
 
 [sub_resource type="AnimationNodeAnimation" id=22]
-animation = "MoveBackTransition"
+animation = "MoveBack"
 
 [sub_resource type="AnimationNodeAnimation" id=23]
-animation = "MoveForward"
+animation = "MoveBackTransition"
 
 [sub_resource type="AnimationNodeAnimation" id=24]
-animation = "MoveForwardTransition"
+animation = "MoveForward"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "MoveForwardTransition"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=30]
 
@@ -299,14 +300,12 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=34]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=35]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=37]
 switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=38]
 switch_mode = 2
@@ -318,15 +317,22 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
 switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=41]
 switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=42]
 switch_mode = 2
+auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=43]
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachine" id=45]
 states/Damage/node = SubResource( 14 )
 states/Damage/position = Vector2( 209, 103 )
 states/HighAttack/node = SubResource( 15 )
@@ -334,23 +340,25 @@ states/HighAttack/position = Vector2( 580, 114 )
 states/Idle/node = SubResource( 16 )
 states/Idle/position = Vector2( 348, 236 )
 states/Jump/node = SubResource( 18 )
-states/Jump/position = Vector2( 179, 319 )
-states/LowAttack/node = SubResource( 19 )
+states/Jump/position = Vector2( 76, 219 )
+states/Land/node = SubResource( 19 )
+states/Land/position = Vector2( 97.0829, 338.812 )
+states/LowAttack/node = SubResource( 20 )
 states/LowAttack/position = Vector2( 622, 306 )
-states/MidAttack/node = SubResource( 20 )
+states/MidAttack/node = SubResource( 21 )
 states/MidAttack/position = Vector2( 639, 207 )
-states/MoveBack/node = SubResource( 21 )
+states/MoveBack/node = SubResource( 22 )
 states/MoveBack/position = Vector2( 325, 499 )
-states/MoveBackTransition/node = SubResource( 22 )
+states/MoveBackTransition/node = SubResource( 23 )
 states/MoveBackTransition/position = Vector2( 332, 414 )
-states/MoveForward/node = SubResource( 23 )
+states/MoveForward/node = SubResource( 24 )
 states/MoveForward/position = Vector2( 680, 499 )
-states/MoveForwardTransition/node = SubResource( 24 )
+states/MoveForwardTransition/node = SubResource( 25 )
 states/MoveForwardTransition/position = Vector2( 580, 414 )
-transitions = [ "Idle", "MoveForwardTransition", SubResource( 25 ), "MoveForward", "MoveForwardTransition", SubResource( 26 ), "Idle", "MoveBackTransition", SubResource( 27 ), "MoveBackTransition", "MoveBack", SubResource( 28 ), "MoveBack", "MoveBackTransition", SubResource( 29 ), "Idle", "Damage", SubResource( 30 ), "Idle", "HighAttack", SubResource( 31 ), "Idle", "MidAttack", SubResource( 32 ), "Idle", "LowAttack", SubResource( 33 ), "Idle", "Jump", SubResource( 34 ), "MoveForwardTransition", "MoveForward", SubResource( 35 ), "MoveForwardTransition", "Idle", SubResource( 36 ), "LowAttack", "Idle", SubResource( 37 ), "MidAttack", "Idle", SubResource( 38 ), "HighAttack", "Idle", SubResource( 39 ), "MoveBackTransition", "Idle", SubResource( 40 ), "Damage", "Idle", SubResource( 41 ), "Jump", "Idle", SubResource( 42 ) ]
-graph_offset = Vector2( 102, 193.65 )
+transitions = [ "Idle", "MoveForwardTransition", SubResource( 26 ), "MoveForward", "MoveForwardTransition", SubResource( 27 ), "Idle", "MoveBackTransition", SubResource( 28 ), "MoveBackTransition", "MoveBack", SubResource( 29 ), "MoveBack", "MoveBackTransition", SubResource( 30 ), "Idle", "Damage", SubResource( 31 ), "Idle", "HighAttack", SubResource( 32 ), "Idle", "MidAttack", SubResource( 33 ), "Idle", "LowAttack", SubResource( 34 ), "Idle", "Jump", SubResource( 35 ), "MoveForwardTransition", "MoveForward", SubResource( 36 ), "MoveForwardTransition", "Idle", SubResource( 37 ), "LowAttack", "Idle", SubResource( 38 ), "MidAttack", "Idle", SubResource( 39 ), "HighAttack", "Idle", SubResource( 40 ), "MoveBackTransition", "Idle", SubResource( 41 ), "Damage", "Idle", SubResource( 42 ), "Land", "Idle", SubResource( 43 ), "Jump", "Land", SubResource( 44 ) ]
+graph_offset = Vector2( -202.917, 53.8123 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=44]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=46]
 
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -360,7 +368,7 @@ script = ExtResource( 1 )
 [node name="Body" type="AnimatedSprite" parent="Pivot"]
 position = Vector2( 1.03485, -58.6585 )
 frames = SubResource( 1 )
-frame = 9
+frame = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -63.095, -22.9502 )
@@ -380,7 +388,7 @@ anims/MoveForward = SubResource( 12 )
 anims/MoveForwardTransition = SubResource( 13 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 43 )
+tree_root = SubResource( 45 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 44 )
+parameters/playback = SubResource( 46 )
