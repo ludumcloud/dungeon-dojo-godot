@@ -7,31 +7,42 @@ const JUMP_HEIGHT = -500
 var motion = Vector2()
 onready var animation_tree = get_node("AnimationTree")
 var playback: AnimationNodeStateMachinePlayback
-
+var last_input = ""
+var last_input_dt = 0.0
 
 func _ready():
 	playback = animation_tree.get("parameters/playback")
 	playback.start("Idle")
 
+func _input(event):
+	last_input_dt = 0.100
+	if event.is_action_pressed("hi_attack"):
+		last_input = "HighAttack"
+	elif event.is_action_pressed("mid_attack"):
+		last_input = "MidAttack"
+	elif event.is_action_pressed("low_attack"):
+		last_input = "LowAttack"
+	elif event.is_action_pressed("jump"):
+		last_input = "Jump"
+	elif event.is_action_pressed("damage"):
+		last_input = "Damage"
+
 func _process(delta):
-	if Input.is_action_just_pressed("hi_attack"):
-		playback.travel("HighAttack")
-	if Input.is_action_just_pressed("mid_attack"):
-		playback.travel("MidAttack")
-	if Input.is_action_just_pressed("low_attack"):
-		playback.travel("LowAttack")
-	if Input.is_action_just_pressed("jump"):
-		playback.travel("Jump")
-	if Input.is_action_just_pressed("damage"):
-		playback.travel("Damage")
-	if Input.is_action_pressed("move_left"):
+	if playback.get_current_node() == "Idle" && last_input != "":
+		playback.travel(last_input)
+		last_input = ""
+	elif Input.is_action_pressed("move_left"):
 		playback.travel("MoveBack")
-	if Input.is_action_pressed("move_right"):
+	elif Input.is_action_pressed("move_right"):
 		playback.travel("MoveForward")
-	if Input.is_action_just_released("move_right"):
+	elif Input.is_action_just_released("move_right"):
 		playback.travel("Idle")
-	if Input.is_action_just_released("move_left"):
+	elif Input.is_action_just_released("move_left"):
 		playback.travel("Idle")
+	last_input_dt -= delta
+	if last_input_dt <= 0:
+		last_input_dt = 0
+		last_input = ""
 
 func _physics_process(delta):
 	var current_state = playback.get_current_node()
