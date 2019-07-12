@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resources/background.png" type="Texture" id=1]
-[ext_resource path="res://resources/Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/npc.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 544.247 )
