@@ -20,7 +20,7 @@ func _process(delta):
 		playback.travel("MidAttack")
 	if Input.is_action_just_pressed("low_attack"):
 		playback.travel("LowAttack")
-	if Input.is_action_just_released("jump"):
+	if Input.is_action_just_pressed("jump"):
 		playback.travel("Jump")
 	if Input.is_action_just_pressed("damage"):
 		playback.travel("Damage")
@@ -34,17 +34,21 @@ func _process(delta):
 		playback.travel("Idle")
 
 func _physics_process(delta):
+	var current_state = playback.get_current_node()
+
 	motion.y += GRAVITY
 
-	if Input.is_action_pressed("move_right"):
+	if current_state == "MoveForward":
 		motion.x = SPEED
-	elif Input.is_action_pressed("move_left"):
+	elif current_state == "MoveBack":
 		motion.x = -SPEED
 	else:
 		motion.x = 0
 
 	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
+		if current_state == "Fall":
+			playback.travel("Land")
+		if current_state == "Jump":
 			motion.y = JUMP_HEIGHT
 
 	motion = move_and_slide(motion, UP)
