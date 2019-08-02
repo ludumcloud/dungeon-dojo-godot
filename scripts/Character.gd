@@ -6,6 +6,7 @@ const SPEED = 150
 const JUMP_HEIGHT = -500
 var motion = Vector2()
 onready var animation_tree = get_node("AnimationTree")
+onready var audio_playback = get_node("AudioStreamPlayer")
 var playback: AnimationNodeStateMachinePlayback
 var last_input = ""
 var last_input_dt = 0.0
