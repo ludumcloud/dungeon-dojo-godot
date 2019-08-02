@@ -31,14 +31,15 @@ func _process(delta):
 	if playback.get_current_node() == "Idle" && last_input != "":
 		playback.travel(last_input)
 		last_input = ""
-	elif Input.is_action_pressed("move_left"):
-		playback.travel("MoveBack")
-	elif Input.is_action_pressed("move_right"):
-		playback.travel("MoveForward")
-	elif Input.is_action_just_released("move_right"):
-		playback.travel("Idle")
-	elif Input.is_action_just_released("move_left"):
-		playback.travel("Idle")
+	elif is_on_floor():
+		if Input.is_action_pressed("move_left"):
+			playback.travel("MoveBack")
+		elif Input.is_action_pressed("move_right"):
+			playback.travel("MoveForward")
+		elif Input.is_action_just_released("move_right"):
+			playback.travel("Idle")
+		elif Input.is_action_just_released("move_left"):
+			playback.travel("Idle")
 	last_input_dt -= delta
 	if last_input_dt <= 0:
 		last_input_dt = 0
